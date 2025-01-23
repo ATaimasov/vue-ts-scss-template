@@ -1,5 +1,5 @@
-@use "@abstracts/variables/variables" as shared;
-@use "@scss-functions/utils/strip-unit" as *;
+@use '@abstracts/variables/variables' as shared;
+@use '@scss-functions/utils/strip-unit' as *;
 
 // average-value-for-tablet
 // calculate adaptive property if we don't have value for tablet, but have values for desktop and mobile

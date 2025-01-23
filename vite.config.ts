@@ -6,7 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools';
 
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'; // optimize images requires plugins svgo and sharp
 
-function makeAlias(relativePath: any) {
+function makeAlias(relativePath: string) {
   return fileURLToPath(new URL(relativePath, import.meta.url));
 }
 

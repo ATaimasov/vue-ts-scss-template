@@ -1,6 +1,6 @@
-@use "sass:math";
-@use "sass:list";
-@use "sass:meta";
+@use 'sass:math';
+@use 'sass:list';
+@use 'sass:meta';
 
 // convert only pixels but you can add different values together
 // example:  padding: rem(12px, 1%, 1rem, 12px); =>     padding: 0.75rem 1% 1rem 0.75rem;
@@ -23,15 +23,15 @@
       $converted-value: null;
     }
     // Handle numbers without units
-    @else if meta.type-of($value) == "number" and math.unit($value) == "" {
+    @else if meta.type-of($value) == 'number' and math.unit($value) == '' {
       $converted-value: $value;
     }
     // Handle pixel values
-    @else if meta.type-of($value) == "number" and math.unit($value) == "px" {
+    @else if meta.type-of($value) == 'number' and math.unit($value) == 'px' {
       $converted-value: math.div($value, $base-font-size) * 1rem;
     }
     // Handle non-pixel units
-    @else if meta.type-of($value) == "number" and math.unit($value) != "px" {
+    @else if meta.type-of($value) == 'number' and math.unit($value) != 'px' {
       // @warn "Value #{$value} has incorrect unit. Expected px, got #{math.unit($value)}";
       // uncomment to get warnings if you need check units
       $converted-value: $value;

@@ -1,6 +1,6 @@
-@use "sass:list";
-@use "@scss-functions/values/rem" as *;
-@use "@scss-functions/utils/is-list" as *;
+@use 'sass:list';
+@use '@scss-functions/values/rem' as *;
+@use '@scss-functions/utils/is-list' as *;
 
 @function convert-to-list($values) {
   // Converts input data into a list

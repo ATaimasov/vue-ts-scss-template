@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import TheHeader from "@/components/TheHeader.vue";
-import TheFooter from "@components/TheFooter.vue";
-import { useRoute } from "vue-router";
+import TheHeader from '@/components/TheHeader.vue';
+import TheFooter from '@components/TheFooter.vue';
+import { useRoute } from 'vue-router';
 
 const route = useRoute();
 </script>
@@ -26,5 +26,4 @@ const route = useRoute();
 [v-cloak] {
   display: none;
 }
-
 </style>

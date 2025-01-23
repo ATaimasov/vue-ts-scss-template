@@ -1,14 +1,11 @@
 <script setup lang="ts">
-import TestComponent from "@components/TestComponent.vue";
-
+import TestComponent from '@components/TestComponent.vue';
 </script>
 
 <template>
   <div class="main__container">
-    <TestComponent/>
+    <TestComponent />
   </div>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

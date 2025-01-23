@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import Copyrights from "@components/Copyrights.vue";
-import Navigation from "@components/Navigation.vue";
+import CopyrightsBlock from '@components/CopyrightsBlock.vue';
+import NavigationMenu from '@components/NavigationMenu.vue';
 </script>
 
 <template>
   <Teleport to="#header">
-    <Copyrights />
-    <Navigation />
+    <CopyrightsBlock />
+    <NavigationMenu />
   </Teleport>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

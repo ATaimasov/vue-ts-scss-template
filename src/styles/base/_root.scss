@@ -1,11 +1,11 @@
 // abstracts
-@use "@styles/global" as *;
-@use "sass:color";
+@use '@styles/global' as *;
+@use 'sass:color';
 
 // root styles
-@use "@base/fonts";
-@use "@base/reset";
-@use "@base/animation";
+@use '@base/fonts';
+@use '@base/reset';
+@use '@base/animation';
 
 //fix "jumping" content when the scrollbar appears or is hidden.
 // .html, .body {
@@ -13,12 +13,11 @@
 // }
 
 .html {
-  font-family: "Roboto", "Open Sans", Arial, sans-serif;
+  font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
   font-style: normal;
   line-height: 1.2em;
   color: $color-text-primary;
-  scrollbar-color: hex-to-rgba($color-primary, 0.9)
-    color.adjust(white, $lightness: -10%);
+  scrollbar-color: hex-to-rgba($color-primary, 0.9) color.adjust(white, $lightness: -10%);
   scrollbar-width: thin;
   scroll-padding-top: 5%;
 

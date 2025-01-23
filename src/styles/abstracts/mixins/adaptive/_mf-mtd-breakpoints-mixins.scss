@@ -1,5 +1,5 @@
-@use "@abstracts/variables/variables" as shared;
-@use "@scss-functions/utils/convert-to-list" as *;
+@use '@abstracts/variables/variables' as shared;
+@use '@scss-functions/utils/convert-to-list' as *;
 
 // mobile-tablet-desktop (mtd) -  mobile first methodology breakpoints
 // example: @include mtd(font-size, 50%, 70%, 100%);

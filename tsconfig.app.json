@@ -6,21 +6,21 @@
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "baseUrl": ".",
-
     "paths": {
-      "@/*": ["./src/*"],
-      "@scripts/*": ["./src/scripts/*"],
-      "@components/*": ["./src/components/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@views/*": ["./src/views/*"],
-      "@ui/*": ["./src/components/ui/*"],
-      "@icons/*": ["./src/components/icons/*"],
-      "@abstracts/*": ["./src/styles/abstracts/*"],
-      "@scss-functions/*": ["./src/styles/abstracts/functions/*"],
-      "@base/*": ["./src/styles/base/*"],
-      "@assets/*": ["./src/assets/*"],
-      "@img/*": ["./src/assets/img/*"],
-      "@fonts/*": ["./src/assets/fonts/*"]
+      "@/*": ["src/*"],
+      "@scripts/*": ["src/scripts/*"],
+      "@components/*": ["src/components/*"],
+      "@styles/*": ["src/styles/*"],
+      "@views/*": ["src/views/*"],
+      "@ui/*": ["src/components/ui/*"],
+      "@icons/*": ["src/components/icons/*"],
+      "@abstracts/*": ["src/styles/abstracts/*"],
+      "@scss-functions/*": ["src/styles/abstracts/functions/*"],
+      "@base/*": ["src/styles/base/*"],
+      "@assets/*": ["src/assets/*"],
+      "@img/*": ["src/assets/img/*"],
+      "@fonts/*": ["src/assets/fonts/*"]
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }

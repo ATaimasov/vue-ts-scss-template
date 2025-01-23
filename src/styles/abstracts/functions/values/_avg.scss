@@ -1,5 +1,5 @@
-@use "sass:math";
-@use "@scss-functions/utils/strip-unit" as *;
+@use 'sass:math';
+@use '@scss-functions/utils/strip-unit' as *;
 
 // average value between two values
 @function avg($value1, $value2) {

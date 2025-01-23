@@ -1,9 +1,9 @@
-@use "sass:color";
+@use 'sass:color';
 
 @function hex-to-rgb($hex-color) {
   @return (
-    color.channel($hex-color, "red", $space: rgb),
-    color.channel($hex-color, "green", $space: rgb),
-    color.channel($hex-color, "blue", $space: rgb)
+    color.channel($hex-color, 'red', $space: rgb),
+    color.channel($hex-color, 'green', $space: rgb),
+    color.channel($hex-color, 'blue', $space: rgb)
   );
 }
