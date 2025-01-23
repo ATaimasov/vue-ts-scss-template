@@ -1,3 +1,8 @@
-@use "@styles/base" as *;
+@forward "@styles/global";
+@use "@base/root";
+@use "@base/state";
 
-@use "@scss-components/test" as *;
+#__nuxt,
+#teleports {
+  display: contents;
+}

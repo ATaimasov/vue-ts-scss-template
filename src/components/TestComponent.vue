@@ -1,5 +1,6 @@
-<div class="main__container">
-  <h1 class="test__title">Vite vanilla template</h1>
+<script setup lang="ts"></script>
+<template>
+  <h1 class="test__title">Vue TS SCSS template</h1>
   <p class="test__text">
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit quo nostrum
     tenetur, accusantium quis omnis obcaecati quibusdam ea expedita saepe,
@@ -51,8 +52,37 @@
     saepe nemo, nesciunt ipsum commodi itaque. Quidem, repellat!
   </p>
   <div class="test__images">
-    <img src="src/assets/img/img.jpeg" alt="" class="img" />
-    <img src="src/assets/img/img.jpeg" alt="" class="img" />
-    <img src="src/assets/img/img.jpeg" alt="" class="img" />
+    <img src="@img/img.jpeg" alt="" class="img" />
+    <img src="@img/img.jpeg" alt="" class="img" />
+    <img src="@img/img.jpeg" alt="" class="img" />
   </div>
-</div>
+</template>
+
+<style lang="scss" scoped>
+
+.test {
+  &__title {
+    font-size: rem(20px);
+
+    @media screen and (min-width: $screen-md) {
+      font-size: rem(30px);
+    }
+  }
+
+  &__text {
+    font-size: rem(15px);
+    line-height: 1.3em;
+    text-align: justify;
+
+    @media screen and (min-width: $screen-md) {
+      font-size: rem(20px);
+    }
+  }
+
+  &__images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+</style>

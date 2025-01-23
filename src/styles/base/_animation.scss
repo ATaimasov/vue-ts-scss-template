@@ -9,3 +9,15 @@
     background-position: 0% 50%;
   }
 }
+
+.fade {
+  &-enter-active,
+  &-leave-active {
+    transition: all 0.3s ease-out;
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+  }
+}

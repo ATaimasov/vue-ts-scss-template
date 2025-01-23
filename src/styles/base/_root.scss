@@ -131,17 +131,25 @@
 .logo {
   line-height: 0;
   user-select: none;
+  color: inherit;
 }
 
 .link {
   text-decoration: none;
   cursor: pointer;
+
+  //! delete or change
+  color: $color-text-primary;
   @include event-opacity;
 }
 
 .btn {
   user-select: none;
   cursor: pointer;
+
+  //! delete or change
+  color: $color-text-primary;
+  border: none;
   @include event-opacity;
 }
 

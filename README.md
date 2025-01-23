@@ -1,57 +1,33 @@
-# Template: Vite + SCSS + JS
+# portfolio
 
-## Description
+This template should help get you started developing with Vue 3 in Vite.
 
-- the template is more oriented towards building with pure JS, but can be rebuilt on a framework if desired.
-- suitable for both single page application and multi-page application
+## Recommended IDE Setup
 
-## What's useful?
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-### Vite setup
+## Type Support for `.vue` Imports in TS
 
-- image optimisation
-- componentisation with HTML
-- auto-update on html changes
-- added aliases for convenience
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
 
-### Styles
+## Customize configuration
 
-#### Organisation of styles
+See [Vite Configuration Reference](https://vite.dev/config/).
 
-- the necessary files for the styles are placed in the appropriate folders
-- internal functions that are used only in other functions and utilities are located in abstract/utils
-- each abstract folder (containing variables, mixins, functions) has a subfolder that contains a generic build file (it is without underscored: varibables.scss, mixins.scss, functios.scss). if you need to add a new mixin, function, variable for global use, just add it to one of generic build file
+## Project Setup
 
-##### How to use it
+```sh
+npm install
+```
 
-- global.scss - might of the scss are collected into the file. use in components styles (hero.scss, copyrights.scss, etc).
-- base.scss - all styles that you need for every page including global. use in pages styles (main.scss, contacts.scss, reviews.scss, etc).
+### Compile and Hot-Reload for Development
 
-#### Using abilities of SCSS
+```sh
+npm run dev
+```
 
-- variables: screen size, font size, colours, etc.
-- mixins:
-  - breakpoints (mobile-first prefer) with/without px-to-rem conversion
-  - counting average tablet values with calc function if you have only for mobile and desktop (works correctly with px)
-  - counting average values with calc functions depending on many values
-- functions:
-  - find average value between two units
-  - values conversion functions (px to rem, px to percents)
-  - colors conversion (hex-to-rgb/hex-to-rgba)
+### Type-Check, Compile and Minify for Production
 
-More about it you can find in the **<a href="src/styles/_INSTRUCTION.scss">\_INSTRUCTION.scss</a>** in the styles folder
-
-#### What about the layout?
-
-- it's have three main components:
-  - header
-  - main
-  - footer
-- parent of these (body) has grid-layout
-- all of these three has 100% width of body. you need to use paddings/margins with containers to get desired result
-- styles based on BEM methodology
-
-## Support
-
-If this was helpful to you, please put a star ❤
-Thank you!
+```sh
+npm run build
+```
