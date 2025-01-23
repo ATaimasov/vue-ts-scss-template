@@ -1,0 +1,187 @@
+// creator: Alexander Taimasov
+// https://github.com/ATaimasov/vite-scss-js-template
+
+.instruction-with-examples {
+  /*
+
+    &__import {
+
+        global import
+        @use '@styles/global' as *;
+
+        local import
+        e.g.
+        @use '@abstracts/mixins/properties/mf-breakpoints-mixins' as *;
+    }
+
+    */
+
+  &__breakpoints {
+    // 1.1
+    // common use of adaptive value | list of breakpoints in screen-params
+    @include mf-bp-rem(
+      "font-size",
+      (
+        xs: $font-size-html * 0.8,
+        sm: $font-size-html * 0.9,
+        xl: $font-size-html,
+      )
+    );
+
+    // using with many values
+    @include mf-bp-rem(
+      "padding",
+      (
+        xs: (
+          5px 10px,
+        ),
+        sm: (
+          10px 15px,
+        ),
+        xl: (
+          15px 20px,
+        ),
+      )
+    );
+
+    // using for not only change values
+    @include mf-bp(
+      "display",
+      (
+        xs: none,
+        lg: flex,
+      )
+    );
+
+    // 1.2
+    // concise syntax (work only in order of map keys of breakpoints)
+    @include mf-bp-rem(
+      "font-size",
+      brief-bp($font-size-html * 0.8, $font-size-html * 0.9, $font-size-html)
+    );
+    // it is apply styles for breakpoints: xs, sm, md
+
+    // 1.3
+    // you can use syntax from 1.1 and 1.2 but without converting values to rem. just remove '-rem'
+    @include mf-bp(
+      "font-size",
+      brief-bp($font-size-html * 0.8, $font-size-html * 0.9, $font-size-html)
+    );
+
+    // 2.1
+    // in case when you have only 3 breakpoints: mobile, tablet, desktop
+    // you can you this mixin
+    @include mtd-bp-rem(
+      "font-size",
+      $font-size-html,
+      $font-size-html * 0.9,
+      $font-size-html * 0.8
+    );
+
+    // 2.2
+    // it is also support 'non rem'
+    @include mtd-bp(
+      "font-size",
+      $font-size-html,
+      $font-size-html * 0.9,
+      $font-size-html * 0.8
+    );
+
+    // 2.3
+    // this mixin also can be used with only one value or two values (mobile, desktop)
+    // using for one value have sense when you need fast convert px to rem
+    @include mtd-bp-rem("font-size", $font-size-html);
+  }
+
+  &__average {
+    // 1
+    // you can calculate average value with this function
+    font-size: avg(40px, 70px); // 55px
+
+    //1.1
+    // you can combine previous mentioned breakpoints mixins with this function
+    @include mf-bp-rem(
+      "font-size",
+      (
+        xs: 40px,
+        // font-size: 2.5rem;
+        md: avg(40px, 70px),
+        // font-size: 3.4375rem;
+        lg: 70px,
+        // font-size: 4.375rem;
+      )
+    );
+
+    @include mf-bp(
+      "padding",
+      (
+        xs: 60px 5px,
+        md: (
+          avg(60px, 112px) avg(5px, 10px),
+        ),
+        // 86px 7.5px
+        lg: 112px 10px,
+      )
+    );
+
+    // 2.1
+    // if you need to calculate average value using calc function between mobile and desktop
+    // mobile = initial value
+    // tablet = $screen-md
+    // desktop = $screen-xl
+
+    @include average-for-tablet("width", 117.43px, 175.39px);
+
+    // 2.2
+    //  if you need to calculate average value using calc function between many breakpoints and values
+    @include avg-bp-multi(
+      right,
+      79.69px,
+      "md",
+      "xl",
+      159.04px,
+      "xl",
+      "xxl",
+      277.04px,
+      "xxl",
+      "xxxl"
+    );
+    /*
+            it is equal:
+            default width: 79.69px;
+            min-width md: average calc between 79.69px and 159.04px
+            min-width xl: average calc between 159.04px and 277.04px
+            min-width xxl (fake-calculation): average calc between 277.04px and 277.04px - it's need for proper working
+            min-width xxxl: 277.04px
+            */
+  }
+
+  &__colors {
+    // hex conversion
+    $color-primary: #01579b;
+
+    background-image: linear-gradient(
+      to right,
+      hex-to-rgba($color-primary, 1),
+      hex-to-rgba($color-primary, 0)
+    );
+  }
+
+  &__values-conversion {
+    // including above functions and mixins there a few more tools
+
+    // 1
+    // px to rem conversion
+    padding: rem(
+      12px,
+      1%,
+      1rem,
+      12px
+    ); // =>     padding: 0.75rem 1% 1rem 0.75rem;
+
+    // 2
+    // px to percents conversion
+    // second argument - screen size
+    width: percents(400px, 800px); // => 50%
+  }
+}

@@ -1,0 +1,8 @@
+@forward "@styles/global";
+@use "@base/root" as *;
+
+// components for all pages
+@use "@scss-ui/copyrights";
+
+// styles for scripts and animations
+@use "@base/state";

@@ -1,0 +1,151 @@
+// abstracts
+@use "@styles/global" as *;
+@use "sass:color";
+
+// root styles
+@use "@base/fonts";
+@use "@base/reset";
+@use "@base/animation";
+
+//fix "jumping" content when the scrollbar appears or is hidden.
+// .html, .body {
+//   scrollbar-gutter: stable;
+// }
+
+.html {
+  font-family: "Roboto", "Open Sans", Arial, sans-serif;
+  font-style: normal;
+  line-height: 1.2em;
+  color: $color-text-primary;
+  scrollbar-color: hex-to-rgba($color-primary, 0.9)
+    color.adjust(white, $lightness: -10%);
+  scrollbar-width: thin;
+  scroll-padding-top: 5%;
+
+  /* exception for non smooth scrolling settings */
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+::selection {
+  background: color.adjust($color-primary, $lightness: -20%);
+  text-shadow: none;
+  color: $color-text-primary;
+}
+
+// grid 3 rows
+.body {
+  display: grid;
+  grid-template-rows: auto 1fr auto; //  if no header and footer: grid-template-rows: auto;
+  grid-template-columns: 100%;
+  justify-items: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.footer,
+.header,
+.main {
+  width: 100%;
+  background-color: transparent; //? set your colors
+}
+//
+
+.header,
+.footer {
+  display: flex;
+  align-items: center;
+
+  //! delete or change
+  padding: rem(20px);
+  @media screen and (min-width: $screen-md) {
+    padding: rem(30px);
+  }
+  @media screen and (min-width: $screen-xl) {
+    padding: rem(40px);
+  }
+}
+
+.header {
+  justify-content: center;
+  flex-direction: column;
+
+  @media screen and (min-width: $screen-sm) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+.footer {
+  justify-content: center;
+
+  //! delete or change
+  &__text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(5px);
+  }
+
+  &__text {
+    font-size: rem(13px);
+    line-height: 1.3em;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    //! delete or change
+    padding-top: rem(5px);
+    padding-bottom: rem(5px);
+    padding-right: rem(10px);
+    padding-left: rem(10px);
+    row-gap: rem(20px);
+    max-width: 80%;
+
+    @media screen and (min-width: $screen-md) {
+      padding-top: rem(15px);
+      padding-bottom: rem(15px);
+      padding-right: rem(30px);
+      padding-left: rem(30px);
+      row-gap: rem(30px);
+    }
+  }
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+}
+
+.logo {
+  line-height: 0;
+  user-select: none;
+}
+
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  @include event-opacity;
+}
+
+.btn {
+  user-select: none;
+  cursor: pointer;
+  @include event-opacity;
+}
+
+.icon {
+  fill: currentColor;
+  transition: fill $animation-duration $animation;
+}

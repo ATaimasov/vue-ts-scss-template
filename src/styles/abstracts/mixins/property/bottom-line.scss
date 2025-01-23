@@ -1,0 +1,11 @@
+@use "@abstracts/variables/variables" as *;
+
+@mixin bottom-line {
+  padding-bottom: 1px;
+  border-bottom: 1px solid transparent;
+  transition: border-color $animation-duration $animation;
+
+  &:hover {
+    border-bottom: 1px solid $color-primary;
+  }
+}

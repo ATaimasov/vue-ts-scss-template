@@ -1,0 +1,7 @@
+@use "sass:math";
+@use "@abstracts/variables/screen-params" as *;
+
+// px to percents
+@function percents($pxValue: 16px, $desktop-size: $screen-xl) {
+  @return math.div($pxValue, $desktop-size) * 100%;
+}

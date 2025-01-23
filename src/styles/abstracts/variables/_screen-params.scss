@@ -1,0 +1,17 @@
+@use "@scss-functions/values/rem" as *;
+
+$screen-xs: rem(0px);
+$screen-sm: rem(480px);
+$screen-md: rem(768px);
+$screen-lg: rem(992px);
+$screen-xl: rem(1200px);
+$screen-xxl: rem(1600px);
+
+$breakpoints: (
+  xs: $screen-xs,
+  sm: $screen-sm,
+  md: $screen-md,
+  lg: $screen-lg,
+  xl: $screen-xl,
+  xxl: $screen-xxl,
+);

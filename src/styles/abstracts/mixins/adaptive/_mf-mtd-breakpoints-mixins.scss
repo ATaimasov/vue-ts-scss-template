@@ -1,0 +1,49 @@
+@use "@abstracts/variables/variables" as shared;
+@use "@scss-functions/utils/convert-to-list" as *;
+
+// mobile-tablet-desktop (mtd) -  mobile first methodology breakpoints
+// example: @include mtd(font-size, 50%, 70%, 100%);
+// got 3 breakpoints: mobile, tablet, desktop
+@mixin mtd-bp($property, $min: null, $medium: null, $max: null) {
+  // Apply basic styles (mobile)
+  @if $min != null {
+    #{$property}: convert-to-list($min);
+  }
+
+  // Applying styles for the tablet
+  @if $medium != null {
+    @media screen and (min-width: shared.$screen-md) {
+      #{$property}: convert-to-list($medium);
+    }
+  }
+
+  // Apply desktop styles
+  @if $max != null {
+    @media screen and (min-width: shared.$screen-xl) {
+      #{$property}: convert-to-list($max);
+    }
+  }
+}
+
+// the same but with converting values to rem
+
+@mixin mtd-bp-rem($property, $min: null, $medium: null, $max: null) {
+  // Apply basic styles (mobile)
+  @if $min != null {
+    #{$property}: convert-to-list-rem($min);
+  }
+
+  // Applying styles for the tablet
+  @if $medium != null {
+    @media screen and (min-width: shared.$screen-md) {
+      #{$property}: convert-to-list-rem($medium);
+    }
+  }
+
+  // Apply desktop styles
+  @if $max != null {
+    @media screen and (min-width: shared.$screen-xl) {
+      #{$property}: convert-to-list-rem($max);
+    }
+  }
+}
